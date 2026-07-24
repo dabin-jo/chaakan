@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHAAKAN</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand">CHAAKAN</a>
+      <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+      <nav class="site-nav" aria-label="주요 메뉴">
+        <a href="#home">HOME</a>
+        <a href="#story">STORY</a>
+        <a href="#collection">COLLECTION</a>
+        <a href="#lookbook">LOOKBOOK</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" type="button">SEARCH</button>
+        <button class="icon-btn" type="button">CART</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <img src="img/topBanner_no108.jpg" alt="CHAakan hero" class="hero-bg" />
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <span class="hero-label">Just CHAAKAN.</span>
+        <h1>CHAAKAN</h1>
+        <p>조다빈이 제안하는 클래식한 모던 슈즈, 편안함과 완성도를 담아 오늘의 스타일을 완성합니다.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#collection">컬렉션 보기</a>
+          <a class="ghost-btn" href="#lookbook">룩북 보기</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="intro container section-reveal">
+      <div class="intro-media">
+        <img src="img/introduction.jpg" alt="CRAFTED SHOES" />
+      </div>
+      <div class="intro-copy">
+        <p class="eyebrow">HANDMADE LEATHER</p>
+        <h2>CHAAKAN의 섬세한 제작 방식</h2>
+        <p>공정 하나하나에 장인의 세심한 손길을 더해 완성도 높은 착화감을 추구합니다. 매 순간 편안함과 우아함을 담아, 당신의 걸음을 특별하게 만듭니다.</p>
+        <ul class="story-list">
+          <li>정교한 재단과 봉제로 완성되는 고급 가죽 라인</li>
+          <li>꼼꼼한 수작업으로 완성되는 편안한 착화감</li>
+          <li>심플하면서도 개성 있는 시그니처 디테일</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="values container section-reveal">
+      <div class="section-header">
+        <p class="eyebrow">THE CHAAKAN</p>
+        <h2>CHAAKAN이 제안하는 가치</h2>
+      </div>
+      <div class="cards-grid">
+        <article class="feature-card">
+          <h3>디테일과 고급스러움</h3>
+          <p>모든 소재와 재봉 라인은 정교한 감각으로 완성됩니다. 매일 착용해도 만족스러운 퀄리티를 제공합니다.</p>
+        </article>
+        <article class="feature-card">
+          <h3>최적의 착화감</h3>
+          <p>발의 피로를 줄여주는 설계로, 오랜 시간 이동과 활동에도 편안함을 유지합니다.</p>
+        </article>
+        <article class="feature-card">
+          <h3>일상과 특별함</h3>
+          <p>단순한 신발 그 이상의 가치를 담아, 평범한 하루도 특별하게 만들어줍니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="collection" class="collection container section-reveal">
+      <div class="collection-top">
+        <div>
+          <p class="eyebrow">어제보다 멋진 오늘</p>
+          <h2>새로운 스타일을 제안하는 컬렉션</h2>
+          <p>감각적인 디자인과 편안한 착화감을 모두 갖춘 CHAAKAN의 시그니처 라인업을 만나보세요.</p>
+        </div>
+        <div class="collection-meta">
+          <span>전체 보기</span>
+          <button class="ghost-btn">자세히 보기</button>
+        </div>
+      </div>
+      <div class="product-grid">
+        <article class="product-card" data-title="에브리데이 플랫" data-description="데일리 스타일을 위한 필수템, 부드러운 착화감의 플랫 슈즈입니다." data-image="img/best_1.jpg">
+          <img src="img/best_1.jpg" alt="product 1" />
+          <div class="product-overlay">
+            <span>자세히 보기</span>
+          </div>
+          <div class="product-info">
+            <strong>에브리데이 플랫</strong>
+            <span>데일리 스타일을 위한 필수템</span>
+          </div>
+        </article>
+        <article class="product-card" data-title="모던 로퍼" data-description="클래식과 모던의 완벽한 조화, 세련된 룩을 완성하는 로퍼입니다." data-image="img/best_2.jpg">
+          <img src="img/best_2.jpg" alt="product 2" />
+          <div class="product-overlay">
+            <span>자세히 보기</span>
+          </div>
+          <div class="product-info">
+            <strong>모던 로퍼</strong>
+            <span>클래식과 모던의 완벽한 조화</span>
+          </div>
+        </article>
+        <article class="product-card" data-title="심플 샌들" data-description="여름철 세련된 포인트, 편안함과 스타일을 모두 갖춘 샌들입니다." data-image="img/best_3.jpg">
+          <img src="img/best_3.jpg" alt="product 3" />
+          <div class="product-overlay">
+            <span>자세히 보기</span>
+          </div>
+          <div class="product-info">
+            <strong>심플 샌들</strong>
+            <span>여름철 세련된 포인트</span>
+          </div>
+        </article>
+        <article class="product-card" data-title="스퀘어 토 펌프스" data-description="함께할 때 더욱 빛나는 실루엣, 고급스러운 느낌의 펌프스입니다." data-image="img/best_4.jpg">
+          <img src="img/best_4.jpg" alt="product 4" />
+          <div class="product-overlay">
+            <span>자세히 보기</span>
+          </div>
+          <div class="product-info">
+            <strong>스퀘어 토 펌프스</strong>
+            <span>함께할 때 더욱 빛나는 실루엣</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="lookbook" class="lookbook container section-reveal">
+      <div class="section-header lookbook-header">
+        <div>
+          <p class="eyebrow">LOOKBOOK FOR ME</p>
+          <h2>스타일링 아이디어</h2>
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn slider-prev" type="button" aria-label="왼쪽으로 이동">‹</button>
+          <button class="slider-btn slider-next" type="button" aria-label="오른쪽으로 이동">›</button>
+        </div>
+      </div>
+      <div class="lookbook-slider">
+        <div class="lookbook-card"><img src="img/lookbook_1.png" alt="lookbook 1" /></div>
+        <div class="lookbook-card"><img src="img/lookbook_2.png" alt="lookbook 2" /></div>
+        <div class="lookbook-card"><img src="img/lookbook_3.png" alt="lookbook 3" /></div>
+        <div class="lookbook-card"><img src="img/lookbook_4.png" alt="lookbook 4" /></div>
+        <div class="lookbook-card"><img src="img/lookbook_5.png" alt="lookbook 5" /></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top container">
+      <div class="footer-links">
+        <a href="#home">HOME</a>
+        <a href="#story">STORY</a>
+        <a href="#collection">COLLECTION</a>
+        <a href="#lookbook">LOOKBOOK</a>
+      </div>
+      <div class="footer-contact">
+        <p>고객 문의: support@chaakan.kr</p>
+        <p>서울특별시</p>
+      </div>
+    </div>
+    <div class="footer-brand">CHAAKAN</div>
+  </footer>
+
+  <div class="product-modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-panel" role="dialog" aria-modal="true">
+      <button class="modal-close" aria-label="닫기">×</button>
+      <div class="modal-image"><img src="" alt="제품 상세" /></div>
+      <div class="modal-copy">
+        <h3 class="modal-title"></h3>
+        <p class="modal-description"></p>
+        <button class="primary-btn">구매하기</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
