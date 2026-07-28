@@ -3,184 +3,411 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CHAAKAN</title>
+  <title>CHAAKAN | 착한구두</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#home" class="brand">CHAAKAN</a>
-      <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
-      <nav class="site-nav" aria-label="주요 메뉴">
-        <a href="#home">HOME</a>
-        <a href="#story">STORY</a>
-        <a href="#collection">COLLECTION</a>
-        <a href="#lookbook">LOOKBOOK</a>
-      </nav>
-      <div class="header-actions">
-        <button class="icon-btn" type="button">SEARCH</button>
-        <button class="icon-btn" type="button">CART</button>
+  <header class="site_header">
+    <div class="container header_inner">
+      <div class="header_left">
+        <button type="button" class="menu_toggle" id="menu_toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav_drawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <a href="#home" class="brand_link">
+          <img src="assets/images/logo.svg" alt="CHAAKAN" class="brand_logo" />
+        </a>
+        <nav class="site_nav" aria-label="주요 메뉴">
+          <a href="#">SHOES</a>
+          <a href="#">THE CHAAKAN</a>
+          <a href="#">FLAGSHIP</a>
+          <a href="#">BRAND</a>
+        </nav>
+      </div>
+      <div class="header_right">
+        <form class="header_search" role="search">
+          <label for="header_search_input" class="visually_hidden">상품 검색</label>
+          <input type="search" id="header_search_input" name="q" placeholder="검색어를 입력하세요" />
+          <button type="submit" class="icon_btn">
+            <img src="assets/icon/search.svg" alt="검색" />
+          </button>
+        </form>
+        <div class="header_actions">
+          <button type="button" class="icon_btn search_toggle_mobile" id="search_toggle_mobile" aria-label="검색 열기" aria-haspopup="dialog">
+            <img src="assets/icon/search.svg" alt="" aria-hidden="true" />
+          </button>
+          <a href="#" class="icon_btn" aria-label="마이페이지">
+            <img src="assets/icon/user.svg" alt="" aria-hidden="true" />
+          </a>
+          <a href="#" class="icon_btn" aria-label="장바구니">
+            <img src="assets/icon/bag.svg" alt="" aria-hidden="true" />
+          </a>
+        </div>
       </div>
     </div>
   </header>
 
-  <main>
-    <section id="home" class="hero">
-      <img src="img/topBanner_no108.jpg" alt="CHAakan hero" class="hero-bg" />
-      <div class="hero-overlay"></div>
-      <div class="hero-content container">
-        <span class="hero-label">Just CHAAKAN.</span>
-        <h1>CHAAKAN</h1>
-        <p>조다빈이 제안하는 클래식한 모던 슈즈, 편안함과 완성도를 담아 오늘의 스타일을 완성합니다.</p>
-        <div class="hero-actions">
-          <a class="primary-btn" href="#collection">컬렉션 보기</a>
-          <a class="ghost-btn" href="#lookbook">룩북 보기</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="story" class="intro container section-reveal">
-      <div class="intro-media">
-        <img src="img/introduction.jpg" alt="CRAFTED SHOES" />
-      </div>
-      <div class="intro-copy">
-        <p class="eyebrow">HANDMADE LEATHER</p>
-        <h2>CHAAKAN의 섬세한 제작 방식</h2>
-        <p>공정 하나하나에 장인의 세심한 손길을 더해 완성도 높은 착화감을 추구합니다. 매 순간 편안함과 우아함을 담아, 당신의 걸음을 특별하게 만듭니다.</p>
-        <ul class="story-list">
-          <li>정교한 재단과 봉제로 완성되는 고급 가죽 라인</li>
-          <li>꼼꼼한 수작업으로 완성되는 편안한 착화감</li>
-          <li>심플하면서도 개성 있는 시그니처 디테일</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="values container section-reveal">
-      <div class="section-header">
-        <p class="eyebrow">THE CHAAKAN</p>
-        <h2>CHAAKAN이 제안하는 가치</h2>
-      </div>
-      <div class="cards-grid">
-        <article class="feature-card">
-          <h3>디테일과 고급스러움</h3>
-          <p>모든 소재와 재봉 라인은 정교한 감각으로 완성됩니다. 매일 착용해도 만족스러운 퀄리티를 제공합니다.</p>
-        </article>
-        <article class="feature-card">
-          <h3>최적의 착화감</h3>
-          <p>발의 피로를 줄여주는 설계로, 오랜 시간 이동과 활동에도 편안함을 유지합니다.</p>
-        </article>
-        <article class="feature-card">
-          <h3>일상과 특별함</h3>
-          <p>단순한 신발 그 이상의 가치를 담아, 평범한 하루도 특별하게 만들어줍니다.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="collection" class="collection container section-reveal">
-      <div class="collection-top">
-        <div>
-          <p class="eyebrow">어제보다 멋진 오늘</p>
-          <h2>새로운 스타일을 제안하는 컬렉션</h2>
-          <p>감각적인 디자인과 편안한 착화감을 모두 갖춘 CHAAKAN의 시그니처 라인업을 만나보세요.</p>
-        </div>
-        <div class="collection-meta">
-          <span>전체 보기</span>
-          <button class="ghost-btn">자세히 보기</button>
-        </div>
-      </div>
-      <div class="product-grid">
-        <article class="product-card" data-title="에브리데이 플랫" data-description="데일리 스타일을 위한 필수템, 부드러운 착화감의 플랫 슈즈입니다." data-image="img/best_1.jpg">
-          <img src="img/best_1.jpg" alt="product 1" />
-          <div class="product-overlay">
-            <span>자세히 보기</span>
-          </div>
-          <div class="product-info">
-            <strong>에브리데이 플랫</strong>
-            <span>데일리 스타일을 위한 필수템</span>
-          </div>
-        </article>
-        <article class="product-card" data-title="모던 로퍼" data-description="클래식과 모던의 완벽한 조화, 세련된 룩을 완성하는 로퍼입니다." data-image="img/best_2.jpg">
-          <img src="img/best_2.jpg" alt="product 2" />
-          <div class="product-overlay">
-            <span>자세히 보기</span>
-          </div>
-          <div class="product-info">
-            <strong>모던 로퍼</strong>
-            <span>클래식과 모던의 완벽한 조화</span>
-          </div>
-        </article>
-        <article class="product-card" data-title="심플 샌들" data-description="여름철 세련된 포인트, 편안함과 스타일을 모두 갖춘 샌들입니다." data-image="img/best_3.jpg">
-          <img src="img/best_3.jpg" alt="product 3" />
-          <div class="product-overlay">
-            <span>자세히 보기</span>
-          </div>
-          <div class="product-info">
-            <strong>심플 샌들</strong>
-            <span>여름철 세련된 포인트</span>
-          </div>
-        </article>
-        <article class="product-card" data-title="스퀘어 토 펌프스" data-description="함께할 때 더욱 빛나는 실루엣, 고급스러운 느낌의 펌프스입니다." data-image="img/best_4.jpg">
-          <img src="img/best_4.jpg" alt="product 4" />
-          <div class="product-overlay">
-            <span>자세히 보기</span>
-          </div>
-          <div class="product-info">
-            <strong>스퀘어 토 펌프스</strong>
-            <span>함께할 때 더욱 빛나는 실루엣</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="lookbook" class="lookbook container section-reveal">
-      <div class="section-header lookbook-header">
-        <div>
-          <p class="eyebrow">LOOKBOOK FOR ME</p>
-          <h2>스타일링 아이디어</h2>
-        </div>
-        <div class="slider-controls">
-          <button class="slider-btn slider-prev" type="button" aria-label="왼쪽으로 이동">‹</button>
-          <button class="slider-btn slider-next" type="button" aria-label="오른쪽으로 이동">›</button>
-        </div>
-      </div>
-      <div class="lookbook-slider">
-        <div class="lookbook-card"><img src="img/lookbook_1.png" alt="lookbook 1" /></div>
-        <div class="lookbook-card"><img src="img/lookbook_2.png" alt="lookbook 2" /></div>
-        <div class="lookbook-card"><img src="img/lookbook_3.png" alt="lookbook 3" /></div>
-        <div class="lookbook-card"><img src="img/lookbook_4.png" alt="lookbook 4" /></div>
-        <div class="lookbook-card"><img src="img/lookbook_5.png" alt="lookbook 5" /></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-top container">
-      <div class="footer-links">
-        <a href="#home">HOME</a>
-        <a href="#story">STORY</a>
-        <a href="#collection">COLLECTION</a>
-        <a href="#lookbook">LOOKBOOK</a>
-      </div>
-      <div class="footer-contact">
-        <p>고객 문의: support@chaakan.kr</p>
-        <p>서울특별시</p>
-      </div>
-    </div>
-    <div class="footer-brand">CHAAKAN</div>
-  </footer>
-
-  <div class="product-modal" aria-hidden="true">
-    <div class="modal-backdrop"></div>
-    <div class="modal-panel" role="dialog" aria-modal="true">
-      <button class="modal-close" aria-label="닫기">×</button>
-      <div class="modal-image"><img src="" alt="제품 상세" /></div>
-      <div class="modal-copy">
-        <h3 class="modal-title"></h3>
-        <p class="modal-description"></p>
-        <button class="primary-btn">구매하기</button>
-      </div>
+  <div class="nav_drawer" id="nav_drawer" aria-hidden="true">
+    <div class="nav_drawer_backdrop" data-drawer-close></div>
+    <div class="nav_drawer_panel" role="dialog" aria-modal="true" aria-label="메뉴">
+      <button type="button" class="nav_drawer_close" data-drawer-close aria-label="메뉴 닫기">×</button>
+      <ul class="nav_drawer_list">
+        <li><a href="#">SHOES</a></li>
+        <li><a href="#">THE CHAAKAN</a></li>
+        <li><a href="#">FLAGSHIP</a></li>
+        <li><a href="#">BRAND</a></li>
+      </ul>
     </div>
   </div>
+
+  <div class="search_modal" id="search_modal" aria-hidden="true">
+    <div class="search_modal_backdrop" data-search-close></div>
+    <div class="search_modal_panel" role="dialog" aria-modal="true" aria-label="상품 검색">
+      <button type="button" class="search_modal_close" data-search-close aria-label="검색 닫기">×</button>
+      <form class="search_modal_form" role="search">
+        <label for="search_modal_input" class="visually_hidden">검색어</label>
+        <input type="search" id="search_modal_input" name="q" placeholder="찾으시는 상품을 검색해 보세요" />
+        <button type="submit" class="icon_btn">
+          <img src="assets/icon/search.svg" alt="검색" />
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <main id="home">
+    <section class="hero" aria-label="브랜드 비주얼">
+      <video class="hero_bg" autoplay muted loop playsinline aria-hidden="true">
+        <source src="assets/images/video_PC.mp4" media="(min-width: 768px)" type="video/mp4" />
+        <source src="assets/images/video_M.mp4" type="video/mp4" />
+      </video>
+      <div class="hero_content container">
+        <p class="hero_ghost" aria-hidden="true">
+          <span>CHAAKAN.</span>
+          <span>Just CHAAKAN.</span>
+        </p>
+      </div>
+    </section>
+
+    <section id="introduction" class="introduction container">
+      <div class="introduction_inner">
+        <div class="introduction_media">
+          <img src="assets/images/introduction.jpg" alt="한 땀 한 땀 손으로 신발을 제작하는 장인의 모습" />
+        </div>
+        <div class="introduction_copy">
+          <p>우리는 신발을 만드는 브랜드가 아닙니다.</p>
+          <p>우리는 <strong>더 편안한 하루를 만드는 브랜드</strong>입니다.</p>
+          <p>디자인은 오래도록 사랑받을 수 있도록,</p>
+          <p><strong>기술은 오래도록 편안할 수 있도록</strong> 고민합니다.</p>
+          <p>트렌드는 빠르게 변하지만 편안함의 가치는 변하지 않습니다.</p>
+          <p><strong>착한구두</strong>는 누구나<strong> 부담 없이 좋은 신발을 선택할 수 있는 세상</strong>을 만들기 위해,</p>
+          <p>오늘도 디자인과 기술, 그리고 일상의 가치를 연결합니다.</p>
+          <img src="assets/images/shoes.png" alt="" class="introduction_shoes" aria-hidden="true" />
+        </div>
+      </div>
+    </section>
+
+    <section id="chaakan_skill" class="chaakan_skill container">
+      <div class="section_title_group">
+        <p class="section_eyebrow">THE CHAAKAN</p>
+        <p class="section_desc">
+          오랜 시간 착용해도 편안한 기술력, 발의 움직임까지 생각한 편안한 설계.
+          착한구두 더착한 라인은 인솔부터 아웃솔까지 자체 설계로 완성해 장시간에도 편안한 착화감을 제공합니다.
+        </p>
+      </div>
+      <div class="skill_grid">
+        <article class="skill_card">
+          <div class="skill_card_bg" aria-hidden="true"><img src="assets/images/card1.png" alt="" /></div>
+          <span class="skill_card_icon"><img src="assets/icon/card_icon1.svg" alt="" aria-hidden="true" /></span>
+          <div class="skill_card_txt">
+            <h3>더착한 고주파 쿠션</h3>
+            <p>인체공학적 설계로 발의 하중을 분산하고 아치를 지지해 <strong>편안한 보행감</strong>을 제공합니다.</p>
+          </div>
+        </article>
+        <article class="skill_card">
+          <div class="skill_card_bg" aria-hidden="true"><img src="assets/images/card2.jpg" alt="" /></div>
+          <span class="skill_card_icon"><img src="assets/icon/card_icon2.svg" alt="" aria-hidden="true" /></span>
+          <div class="skill_card_txt">
+            <h3>자체제작 몰드창</h3>
+            <p>자체제작 몰드창으로 뛰어난 접지력과 유연한 움직임을 구현해 <strong>안정적인 보행감</strong>을 제공합니다.</p>
+          </div>
+        </article>
+        <article class="skill_card">
+          <div class="skill_card_bg" aria-hidden="true"><img src="assets/images/card3.jpg" alt="" /></div>
+          <span class="skill_card_icon"><img src="assets/icon/card_icon3.svg" alt="" aria-hidden="true" /></span>
+          <div class="skill_card_txt">
+            <h3>깃털같은 가벼움</h3>
+            <p>경량 설계로 발의 부담을 줄이고 쿠셔닝을 더해 장시간 착화에도 <strong>날렵한 보행감</strong>을 제공합니다.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="situation" class="situation">
+      <div class="container situation_head">
+        <h2 class="section_eyebrow">이런 날엔 이런 슈즈</h2>
+        <div class="situation_tags" role="tablist" aria-label="상황별 슈즈 선택">
+          <button type="button" class="situation_tag is_active" role="tab" aria-selected="true" data-situation="wedding">웨딩·데이트</button>
+          <button type="button" class="situation_tag" role="tab" aria-selected="false" data-situation="interview">면접·중요 미팅</button>
+          <button type="button" class="situation_tag" role="tab" aria-selected="false" data-situation="special">특별한 하루</button>
+        </div>
+      </div>
+      <div class="situation_body" role="tabpanel">
+        <img src="assets/images/sit1.jpg" alt="" class="situation_bg" id="situation_bg" aria-hidden="true" />
+        <div class="situation_panel">
+          <div class="situation_panel_head">
+            <p class="situation_panel_title" id="situation_panel_title">로맨틱한 순간을 완성하는 스타일 포인트</p>
+            <p class="situation_panel_desc" id="situation_panel_desc">설레는 순간을 위한 데일리 포멀 슈즈 라인</p>
+          </div>
+          <ul class="situation_products" id="situation_products">
+            <li class="situation_product">
+              <a href="#" class="situation_product_thumb">
+                <img src="assets/images/sit1_1.png" alt="뮤즈 메리제인 샌들힐" class="situation_product_img" />
+              </a>
+              <div class="situation_product_info">
+                <div>
+                  <p class="situation_product_name">뮤즈 메리제인 샌들힐</p>
+                  <p class="situation_product_price">32,900원</p>
+                </div>
+                <a href="#" class="situation_product_link">바로가기 ›</a>
+              </div>
+            </li>
+            <li class="situation_product">
+              <a href="#" class="situation_product_thumb">
+                <img src="assets/images/sit1_2.png" alt="포에버 홀스빗 뮬 블로퍼" class="situation_product_img" />
+              </a>
+              <div class="situation_product_info">
+                <div>
+                  <p class="situation_product_name">포에버 홀스빗 뮬 블로퍼</p>
+                  <p class="situation_product_price">37,900원</p>
+                </div>
+                <a href="#" class="situation_product_link">바로가기 ›</a>
+              </div>
+            </li>
+            <li class="situation_product">
+              <a href="#" class="situation_product_thumb">
+                <img src="assets/images/sit1_3.png" alt="라끄 투웨이 스트랩 샌들" class="situation_product_img" />
+              </a>
+              <div class="situation_product_info">
+                <div>
+                  <p class="situation_product_name">라끄 투웨이 스트랩 샌들</p>
+                  <p class="situation_product_price">27,900원</p>
+                </div>
+                <a href="#" class="situation_product_link">바로가기 ›</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="best" class="best container">
+      <div class="section_title_group">
+        <h2 class="section_eyebrow">변함없는 인기,<br />착한구두 베스트셀러 컬렉션</h2>
+      </div>
+      <ul class="best_grid">
+        <li class="best_card">
+          <a href="#" class="best_card_link">
+            <img src="assets/images/best_1.jpg" alt="베로니 플랫 슬링백" />
+            <div class="best_card_info">
+              <p class="best_card_name">베로니 플랫 슬링백</p>
+              <p class="best_card_review">리뷰 6,821</p>
+              <p class="best_card_price">29,700원</p>
+            </div>
+          </a>
+        </li>
+        <li class="best_card">
+          <a href="#" class="best_card_link">
+            <img src="assets/images/best_2.jpg" alt="오프닝 홀스빗 로퍼" />
+            <div class="best_card_info">
+              <p class="best_card_name">오프닝 홀스빗 로퍼</p>
+              <p class="best_card_review">리뷰 4,653</p>
+              <p class="best_card_price">35,900원</p>
+            </div>
+          </a>
+        </li>
+        <li class="best_card">
+          <a href="#" class="best_card_link">
+            <img src="assets/images/best_3.jpg" alt="라끄 투웨이 스트랩 샌들" />
+            <div class="best_card_info">
+              <p class="best_card_name">라끄 투웨이 스트랩 샌들</p>
+              <p class="best_card_review">리뷰 3,748</p>
+              <p class="best_card_price">27,900원</p>
+            </div>
+          </a>
+        </li>
+        <li class="best_card">
+          <a href="#" class="best_card_link">
+            <img src="assets/images/best_4.jpg" alt="조앤 스틸레토 플랫" />
+            <div class="best_card_info">
+              <p class="best_card_name">조앤 스틸레토 플랫</p>
+              <p class="best_card_review">리뷰 1,814</p>
+              <p class="best_card_price">32,900원</p>
+            </div>
+          </a>
+        </li>
+        <li class="best_card">
+          <a href="#" class="best_card_link">
+            <img src="assets/images/best_5.jpg" alt="샌느 미들힐 뮬 슬리퍼" />
+            <div class="best_card_info">
+              <p class="best_card_name">샌느 미들힐 뮬 슬리퍼</p>
+              <p class="best_card_review">리뷰 1,105</p>
+              <p class="best_card_price">29,900원</p>
+            </div>
+          </a>
+        </li>
+        <li class="best_card">
+          <a href="#" class="best_card_link">
+            <img src="assets/images/best_6.jpg" alt="어게인 스퀘어 펌프스" />
+            <div class="best_card_info">
+              <p class="best_card_name">어게인 스퀘어 펌프스</p>
+              <p class="best_card_review">리뷰 9,263</p>
+              <p class="best_card_price">32,900원</p>
+            </div>
+          </a>
+        </li>
+        <li class="best_card">
+          <a href="#" class="best_card_link">
+            <img src="assets/images/best_7.jpg" alt="프롬 스퀘어 미들힐 슬링백" />
+            <div class="best_card_info">
+              <p class="best_card_name">프롬 스퀘어 미들힐 슬링백</p>
+              <p class="best_card_review">리뷰 8,122</p>
+              <p class="best_card_price">32,900원</p>
+            </div>
+          </a>
+        </li>
+        <li class="best_card">
+          <a href="#" class="best_card_link">
+            <img src="assets/images/best_8.jpg" alt="스테파니 스트랩 샌들힐" />
+            <div class="best_card_info">
+              <p class="best_card_name">스테파니 스트랩 샌들힐</p>
+              <p class="best_card_review">리뷰 2,029</p>
+              <p class="best_card_price">29,900원</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="lookbook" class="lookbook" aria-label="PRIZE FOR ME 룩북">
+      <div class="container">
+        <div class="section_title_group">
+          <h2 class="section_eyebrow">PRIZE FOR ME</h2>
+          <p class="section_desc">반복되는 일상에 사적인 선물, 발끝에서 시작되는 설레는 발걸음</p>
+        </div>
+      </div>
+      <div class="lookbook_track" id="lookbook_track">
+        <div class="lookbook_card"><img src="assets/images/lookbook_1.png" alt="CHAAKAN 스타일링 1" /></div>
+        <div class="lookbook_card"><img src="assets/images/lookbook_2.png" alt="CHAAKAN 스타일링 2" /></div>
+        <div class="lookbook_card"><img src="assets/images/lookbook_3.png" alt="CHAAKAN 스타일링 3" /></div>
+        <div class="lookbook_card"><img src="assets/images/lookbook_4.png" alt="CHAAKAN 스타일링 4" /></div>
+        <div class="lookbook_card"><img src="assets/images/lookbook_5.png" alt="CHAAKAN 스타일링 5" /></div>
+        <div class="lookbook_card"><img src="assets/images/lookbook_6.png" alt="CHAAKAN 스타일링 6" /></div>
+        <div class="lookbook_card"><img src="assets/images/lookbook_7.png" alt="CHAAKAN 스타일링 7" /></div>
+        <div class="lookbook_card"><img src="assets/images/lookbook_8.png" alt="CHAAKAN 스타일링 8" /></div>
+        <div class="lookbook_card"><img src="assets/images/lookbook_9.png" alt="CHAAKAN 스타일링 9" /></div>
+        <div class="lookbook_card" aria-hidden="true"><img src="assets/images/lookbook_1.png" alt="" /></div>
+        <div class="lookbook_card" aria-hidden="true"><img src="assets/images/lookbook_2.png" alt="" /></div>
+        <div class="lookbook_card" aria-hidden="true"><img src="assets/images/lookbook_3.png" alt="" /></div>
+        <div class="lookbook_card" aria-hidden="true"><img src="assets/images/lookbook_4.png" alt="" /></div>
+        <div class="lookbook_card" aria-hidden="true"><img src="assets/images/lookbook_5.png" alt="" /></div>
+        <div class="lookbook_card" aria-hidden="true"><img src="assets/images/lookbook_6.png" alt="" /></div>
+        <div class="lookbook_card" aria-hidden="true"><img src="assets/images/lookbook_7.png" alt="" /></div>
+        <div class="lookbook_card" aria-hidden="true"><img src="assets/images/lookbook_8.png" alt="" /></div>
+        <div class="lookbook_card" aria-hidden="true"><img src="assets/images/lookbook_9.png" alt="" /></div>
+      </div>
+    </section>
+
+    <nav id="quick_menu" class="quick_menu container" aria-label="카테고리 바로가기">
+      <ul class="quick_menu_list">
+        <li class="quick_menu_item">
+          <a href="#" class="quick_menu_link">
+            <span class="quick_menu_icon"><img src="assets/shoes_icon/line_all.svg" alt="" aria-hidden="true" /></span>
+            <span>신발 전체보기</span>
+          </a>
+        </li>
+        <li class="quick_menu_item">
+          <a href="#" class="quick_menu_link">
+            <span class="quick_menu_icon"><img src="assets/shoes_icon/line_sandal.svg" alt="" aria-hidden="true" /></span>
+            <span>샌들/슬리퍼</span>
+          </a>
+        </li>
+        <li class="quick_menu_item">
+          <a href="#" class="quick_menu_link">
+            <span class="quick_menu_icon"><img src="assets/shoes_icon/line_mule.svg" alt="" aria-hidden="true" /></span>
+            <span>슬링백/뮬</span>
+          </a>
+        </li>
+        <li class="quick_menu_item">
+          <a href="#" class="quick_menu_link">
+            <span class="quick_menu_icon"><img src="assets/shoes_icon/line_heel.svg" alt="" aria-hidden="true" /></span>
+            <span>펌프스/힐</span>
+          </a>
+        </li>
+        <li class="quick_menu_item">
+          <a href="#" class="quick_menu_link">
+            <span class="quick_menu_icon"><img src="assets/shoes_icon/line_flat.svg" alt="" aria-hidden="true" /></span>
+            <span>플랫</span>
+          </a>
+        </li>
+        <li class="quick_menu_item">
+          <a href="#" class="quick_menu_link">
+            <span class="quick_menu_icon"><img src="assets/shoes_icon/line_loafer.svg" alt="" aria-hidden="true" /></span>
+            <span>로퍼/블로퍼</span>
+          </a>
+        </li>
+        <li class="quick_menu_item">
+          <a href="#" class="quick_menu_link">
+            <span class="quick_menu_icon"><img src="assets/shoes_icon/line_sneakers.svg" alt="" aria-hidden="true" /></span>
+            <span>스니커즈</span>
+          </a>
+        </li>
+        <li class="quick_menu_item">
+          <a href="#" class="quick_menu_link">
+            <span class="quick_menu_icon"><img src="assets/shoes_icon/line_boots.svg" alt="" aria-hidden="true" /></span>
+            <span>레인부츠</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </main>
+
+  <footer class="site_footer">
+    <div class="container">
+      <div class="footer_columns">
+        <div class="footer_group">
+          <button type="button" class="footer_accordion_trigger" data-accordion-trigger aria-expanded="false" aria-controls="footer_panel_service">
+            CUSTOMER SERVICE
+            <img src="assets/icon/plus.svg" alt="" class="plus_icon" aria-hidden="true" />
+          </button>
+          <div class="footer_accordion_panel" id="footer_panel_service">
+            <p>운영시간: 월~금 AM 10:00 ~ PM 16:00<br />점심: PM 12:00 ~ PM 13:00, 토/일/공휴일 휴무</p>
+            <p><a href="#">이용약관</a> | <a href="#">개인정보처리방침</a></p>
+          </div>
+        </div>
+        <div class="footer_group">
+          <button type="button" class="footer_accordion_trigger" data-accordion-trigger aria-expanded="false" aria-controls="footer_panel_company">
+            COMPANY INFORMATION
+            <img src="assets/icon/plus.svg" alt="" class="plus_icon" aria-hidden="true" />
+          </button>
+          <div class="footer_accordion_panel" id="footer_panel_company">
+            <p>MANAGEMENT@CHAAKAN.CO.KR | 주식회사 45스페이스(45SPACE)<br />BUSINESS NUMBER: 731-87-01405</p>
+            <p><a href="#">채용</a> | <a href="#">가맹문의</a> | <a href="#">제휴 및 제안하기</a> | <a href="#">커뮤니티</a></p>
+          </div>
+        </div>
+        <div class="footer_sns">
+          <a href="#" target="_blank" rel="noopener">Instargram ↗</a>
+          <a href="#" target="_blank" rel="noopener">Facebook ↗</a>
+          <a href="#" target="_blank" rel="noopener">Youtube ↗</a>
+          <div class="footer_store">
+            <img src="assets/icon/offlinestore.svg" alt="" aria-hidden="true" />
+            <a href="#">Offline Store</a>
+          </div>
+        </div>
+      </div>
+      <img src="assets/images/logo.svg" alt="CHAAKAN" class="footer_wordmark" />
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

@@ -1,91 +1,160 @@
-const menuToggle = document.querySelector('.menu-toggle');
-const siteNav = document.querySelector('.site-nav');
-const productCards = document.querySelectorAll('.product-card');
-const modal = document.querySelector('.product-modal');
-const modalClose = document.querySelector('.modal-close');
-const modalTitle = document.querySelector('.modal-title');
-const modalDescription = document.querySelector('.modal-description');
-const modalImage = document.querySelector('.modal-image img');
-const sectionReveals = document.querySelectorAll('.section-reveal');
-const lookbookSlider = document.querySelector('.lookbook-slider');
-const prevBtn = document.querySelector('.slider-prev');
-const nextBtn = document.querySelector('.slider-next');
-let currentIndex = 0;
+const menuToggle = document.getElementById('menu_toggle');
+const navDrawer = document.getElementById('nav_drawer');
+const searchToggleMobile = document.getElementById('search_toggle_mobile');
+const searchModal = document.getElementById('search_modal');
+const searchModalInput = document.getElementById('search_modal_input');
+const accordionTriggers = document.querySelectorAll('[data-accordion-trigger]');
+const situationTags = document.querySelectorAll('[data-situation]');
+const situationBg = document.getElementById('situation_bg');
+const situationTitle = document.getElementById('situation_panel_title');
+const situationDesc = document.getElementById('situation_panel_desc');
+const situationProductItems = document.querySelectorAll('#situation_products .situation_product');
 
-if (menuToggle) {
-  menuToggle.addEventListener('click', () => {
-    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.setAttribute('aria-expanded', String(!expanded));
-    siteNav.classList.toggle('nav-open');
-  });
+const situationData = {
+  wedding: {
+    bg: 'assets/images/sit1.jpg',
+    title: '로맨틱한 순간을 완성하는 스타일 포인트',
+    desc: '설레는 순간을 위한 데일리 포멀 슈즈 라인',
+    products: [
+      { name: '뮤즈 메리제인 샌들힐', price: '32,900원', img: 'assets/images/sit1_1.png' },
+      { name: '포에버 홀스빗 뮬 블로퍼', price: '37,900원', img: 'assets/images/sit1_2.png' },
+      { name: '라끄 투웨이 스트랩 샌들', price: '27,900원', img: 'assets/images/sit1_3.png' }
+    ]
+  },
+  interview: {
+    bg: 'assets/images/sit2.jpg',
+    title: '중요한 순간, 첫인상을 완성하는 한 걸음',
+    desc: '자신감 있는 모습과 신뢰감을 더하는 로퍼·블로퍼 슈즈 라인',
+    products: [
+      { name: '브로드 클래식 페니로퍼', price: '32,900원', img: 'assets/images/sit2_1.png' },
+      { name: '켈타 페니로퍼', price: '27,900원', img: 'assets/images/sit2_2.png' },
+      { name: '베네치아 꼬임 로퍼힐', price: '35,900원', img: 'assets/images/sit2_3.png' }
+    ]
+  },
+  special: {
+    bg: 'assets/images/sit3.jpg',
+    title: '평범한 하루보다, 특별한 하루을 위해',
+    desc: '특별한 날의 분위기와 스타일을 완성해 줄 슈즈 컬렉션, 중요한 순간을 더욱 돋보이게.',
+    products: [
+      { name: '미란다 투웨이 스트랩 샌들', price: '29,900원', img: 'assets/images/sit3_1.png' },
+      { name: '코델리아 통굽 뮬 플랫', price: '42,900원', img: 'assets/images/sit3_2.png' },
+      { name: '코코멜 퀼팅 메리제인 스니커즈', price: '49,900원', img: 'assets/images/sit3_3.png' }
+    ]
+  }
+};
+
+function isOverlayOpen(overlay) {
+  return overlay.getAttribute('aria-hidden') === 'false';
 }
 
-productCards.forEach((card) => {
-  card.addEventListener('click', () => {
-    const title = card.dataset.title;
-    const description = card.dataset.description;
-    const image = card.dataset.image;
+function openDrawer() {
+  navDrawer.setAttribute('aria-hidden', 'false');
+  menuToggle.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
 
-    modalTitle.textContent = title;
-    modalDescription.textContent = description;
-    modalImage.src = image;
-    modalImage.alt = title;
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-function closeModal() {
-  modal.setAttribute('aria-hidden', 'true');
+function closeDrawer() {
+  navDrawer.setAttribute('aria-hidden', 'true');
+  menuToggle.setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
 }
 
-modalClose.addEventListener('click', closeModal);
-modal.addEventListener('click', (event) => {
-  if (event.target.classList.contains('product-modal') || event.target.classList.contains('modal-backdrop')) {
-    closeModal();
+function handleMenuToggleClick() {
+  if (isOverlayOpen(navDrawer)) {
+    closeDrawer();
+  } else {
+    openDrawer();
   }
+}
+
+function openSearchModal() {
+  searchModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  searchModalInput.focus();
+}
+
+function closeSearchModal() {
+  searchModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  searchToggleMobile.focus();
+}
+
+function handleSearchToggleClick() {
+  openSearchModal();
+}
+
+function handleAccordionTriggerClick(event) {
+  const trigger = event.currentTarget;
+  const panelId = trigger.getAttribute('aria-controls');
+  const panel = document.getElementById(panelId);
+  const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+
+  trigger.setAttribute('aria-expanded', String(!isExpanded));
+  panel.classList.toggle('is_open', !isExpanded);
+}
+
+if (menuToggle && navDrawer) {
+  menuToggle.addEventListener('click', handleMenuToggleClick);
+  navDrawer.querySelectorAll('[data-drawer-close]').forEach((el) => {
+    el.addEventListener('click', closeDrawer);
+  });
+}
+
+if (searchToggleMobile && searchModal) {
+  searchToggleMobile.addEventListener('click', handleSearchToggleClick);
+  searchModal.querySelectorAll('[data-search-close]').forEach((el) => {
+    el.addEventListener('click', closeSearchModal);
+  });
+}
+
+accordionTriggers.forEach((trigger) => {
+  trigger.addEventListener('click', handleAccordionTriggerClick);
+});
+
+function handleSituationTagClick(event) {
+  const selectedTag = event.currentTarget;
+  const situationKey = selectedTag.dataset.situation;
+  const data = situationData[situationKey];
+
+  if (!data) {
+    return;
+  }
+
+  situationTags.forEach((tag) => {
+    const isSelected = tag === selectedTag;
+    tag.classList.toggle('is_active', isSelected);
+    tag.setAttribute('aria-selected', String(isSelected));
+  });
+
+  situationBg.src = data.bg;
+  situationTitle.textContent = data.title;
+  situationDesc.textContent = data.desc;
+
+  situationProductItems.forEach((item, index) => {
+    const product = data.products[index];
+    const img = item.querySelector('.situation_product_img');
+    const name = item.querySelector('.situation_product_name');
+    const price = item.querySelector('.situation_product_price');
+
+    img.src = product.img;
+    img.alt = product.name;
+    name.textContent = product.name;
+    price.textContent = product.price;
+  });
+}
+
+situationTags.forEach((tag) => {
+  tag.addEventListener('click', handleSituationTagClick);
 });
 
 window.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
-    closeModal();
+  if (event.key !== 'Escape') {
+    return;
+  }
+  if (navDrawer && isOverlayOpen(navDrawer)) {
+    closeDrawer();
+  }
+  if (searchModal && isOverlayOpen(searchModal)) {
+    closeSearchModal();
   }
 });
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.2 });
-
-sectionReveals.forEach((section) => observer.observe(section));
-
-function updateSlider() {
-  const cardWidth = lookbookSlider.querySelector('.lookbook-card').offsetWidth;
-  const gap = 18;
-  const maxIndex = lookbookSlider.children.length - 4;
-
-  if (currentIndex > maxIndex) {
-    currentIndex = Math.max(maxIndex, 0);
-  }
-
-  lookbookSlider.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
-}
-
-nextBtn.addEventListener('click', () => {
-  const maxIndex = lookbookSlider.children.length - 4;
-  currentIndex = Math.min(currentIndex + 1, Math.max(maxIndex, 0));
-  updateSlider();
-});
-
-prevBtn.addEventListener('click', () => {
-  currentIndex = Math.max(currentIndex - 1, 0);
-  updateSlider();
-});
-
-window.addEventListener('resize', updateSlider);
-updateSlider();
