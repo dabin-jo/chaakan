@@ -9,6 +9,8 @@ const situationBg = document.getElementById('situation_bg');
 const situationTitle = document.getElementById('situation_panel_title');
 const situationDesc = document.getElementById('situation_panel_desc');
 const situationProductItems = document.querySelectorAll('#situation_products .situation_product');
+const navShoes = document.getElementById('nav_shoes');
+const navShoesTrigger = navShoes ? navShoes.querySelector('.nav_shoes_trigger') : null;
 
 const situationData = {
   wedding: {
@@ -147,6 +149,27 @@ situationTags.forEach((tag) => {
   tag.addEventListener('click', handleSituationTagClick);
 });
 
+function openMegaMenu() {
+  navShoes.classList.add('is_open');
+  navShoesTrigger.setAttribute('aria-expanded', 'true');
+}
+
+function closeMegaMenu() {
+  navShoes.classList.remove('is_open');
+  navShoesTrigger.setAttribute('aria-expanded', 'false');
+}
+
+if (navShoes && navShoesTrigger) {
+  navShoes.addEventListener('mouseenter', openMegaMenu);
+  navShoes.addEventListener('mouseleave', closeMegaMenu);
+  navShoes.addEventListener('focusin', openMegaMenu);
+  navShoes.addEventListener('focusout', (event) => {
+    if (!navShoes.contains(event.relatedTarget)) {
+      closeMegaMenu();
+    }
+  });
+}
+
 window.addEventListener('keydown', (event) => {
   if (event.key !== 'Escape') {
     return;
@@ -156,5 +179,9 @@ window.addEventListener('keydown', (event) => {
   }
   if (searchModal && isOverlayOpen(searchModal)) {
     closeSearchModal();
+  }
+  if (navShoes && navShoes.classList.contains('is_open')) {
+    closeMegaMenu();
+    navShoesTrigger.focus();
   }
 });
