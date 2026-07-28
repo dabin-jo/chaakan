@@ -322,49 +322,73 @@
       <ul class="quick_menu_list">
         <li class="quick_menu_item">
           <a href="#" class="quick_menu_link">
-            <span class="quick_menu_icon"><img src="assets/shoes_icon/line_all.svg" alt="" aria-hidden="true" /></span>
+            <span class="quick_menu_icon">
+              <img src="assets/shoes_icon/line_all.svg" alt="" class="icon_default" aria-hidden="true" />
+              <img src="assets/shoes_icon/fill_all.svg" alt="" class="icon_hover" aria-hidden="true" />
+            </span>
             <span>신발 전체보기</span>
           </a>
         </li>
         <li class="quick_menu_item">
           <a href="#" class="quick_menu_link">
-            <span class="quick_menu_icon"><img src="assets/shoes_icon/line_sandal.svg" alt="" aria-hidden="true" /></span>
+            <span class="quick_menu_icon">
+              <img src="assets/shoes_icon/line_sandal.svg" alt="" class="icon_default" aria-hidden="true" />
+              <img src="assets/shoes_icon/fill_sandal.svg" alt="" class="icon_hover" aria-hidden="true" />
+            </span>
             <span>샌들/슬리퍼</span>
           </a>
         </li>
         <li class="quick_menu_item">
           <a href="#" class="quick_menu_link">
-            <span class="quick_menu_icon"><img src="assets/shoes_icon/line_mule.svg" alt="" aria-hidden="true" /></span>
+            <span class="quick_menu_icon">
+              <img src="assets/shoes_icon/line_mule.svg" alt="" class="icon_default" aria-hidden="true" />
+              <img src="assets/shoes_icon/fill_mule.svg" alt="" class="icon_hover" aria-hidden="true" />
+            </span>
             <span>슬링백/뮬</span>
           </a>
         </li>
         <li class="quick_menu_item">
           <a href="#" class="quick_menu_link">
-            <span class="quick_menu_icon"><img src="assets/shoes_icon/line_heel.svg" alt="" aria-hidden="true" /></span>
+            <span class="quick_menu_icon">
+              <img src="assets/shoes_icon/line_heel.svg" alt="" class="icon_default" aria-hidden="true" />
+              <img src="assets/shoes_icon/fill_heel.svg" alt="" class="icon_hover" aria-hidden="true" />
+            </span>
             <span>펌프스/힐</span>
           </a>
         </li>
         <li class="quick_menu_item">
           <a href="#" class="quick_menu_link">
-            <span class="quick_menu_icon"><img src="assets/shoes_icon/line_flat.svg" alt="" aria-hidden="true" /></span>
+            <span class="quick_menu_icon">
+              <img src="assets/shoes_icon/line_flat.svg" alt="" class="icon_default" aria-hidden="true" />
+              <img src="assets/shoes_icon/fill_flat.svg" alt="" class="icon_hover" aria-hidden="true" />
+            </span>
             <span>플랫</span>
           </a>
         </li>
         <li class="quick_menu_item">
           <a href="#" class="quick_menu_link">
-            <span class="quick_menu_icon"><img src="assets/shoes_icon/line_loafer.svg" alt="" aria-hidden="true" /></span>
+            <span class="quick_menu_icon">
+              <img src="assets/shoes_icon/line_loafer.svg" alt="" class="icon_default" aria-hidden="true" />
+              <img src="assets/shoes_icon/fill_loafer.svg" alt="" class="icon_hover" aria-hidden="true" />
+            </span>
             <span>로퍼/블로퍼</span>
           </a>
         </li>
         <li class="quick_menu_item">
           <a href="#" class="quick_menu_link">
-            <span class="quick_menu_icon"><img src="assets/shoes_icon/line_sneakers.svg" alt="" aria-hidden="true" /></span>
+            <span class="quick_menu_icon">
+              <img src="assets/shoes_icon/line_sneakers.svg" alt="" class="icon_default" aria-hidden="true" />
+              <img src="assets/shoes_icon/fill_sneakers.svg" alt="" class="icon_hover" aria-hidden="true" />
+            </span>
             <span>스니커즈</span>
           </a>
         </li>
         <li class="quick_menu_item">
           <a href="#" class="quick_menu_link">
-            <span class="quick_menu_icon"><img src="assets/shoes_icon/line_boots.svg" alt="" aria-hidden="true" /></span>
+            <span class="quick_menu_icon">
+              <img src="assets/shoes_icon/line_boots.svg" alt="" class="icon_default" aria-hidden="true" />
+              <img src="assets/shoes_icon/fill_boots.svg" alt="" class="icon_hover" aria-hidden="true" />
+            </span>
             <span>레인부츠</span>
           </a>
         </li>
@@ -375,14 +399,15 @@
   <footer class="site_footer">
     <div class="container">
       <div class="footer_columns">
+        <div class="footer_left">
         <div class="footer_group">
           <button type="button" class="footer_accordion_trigger" data-accordion-trigger aria-expanded="false" aria-controls="footer_panel_service">
             CUSTOMER SERVICE
             <img src="assets/icon/plus.svg" alt="" class="plus_icon" aria-hidden="true" />
           </button>
           <div class="footer_accordion_panel" id="footer_panel_service">
-            <p>운영시간: 월~금 AM 10:00 ~ PM 16:00<br />점심: PM 12:00 ~ PM 13:00, 토/일/공휴일 휴무</p>
-            <p><a href="#">이용약관</a> | <a href="#">개인정보처리방침</a></p>
+            <p>운영시간: 월~금 AM 10:00~ PM 16:00<br />점심: PM 12:00~PM 13:00, 토/일/공휴일 휴무</p>
+            <p class="footer_terms"><a href="#">이용약관</a> | <a href="#"><strong>개인정보처리방침</strong></a></p>
           </div>
         </div>
         <div class="footer_group">
@@ -392,17 +417,27 @@
           </button>
           <div class="footer_accordion_panel" id="footer_panel_company">
             <p>MANAGEMENT@CHAAKAN.CO.KR | 주식회사 45스페이스(45SPACE)<br />BUSINESS NUMBER: 731-87-01405</p>
-            <p><a href="#">채용</a> | <a href="#">가맹문의</a> | <a href="#">제휴 및 제안하기</a> | <a href="#">커뮤니티</a></p>
+            <p class="footer_contact"><a href="#">채용</a> | <a href="#">가맹문의</a> | <a href="#">제휴 및 제안하기</a> | <a href="#">커뮤니티</a></p>
           </div>
         </div>
+        </div>
         <div class="footer_sns">
-          <a href="#" target="_blank" rel="noopener">Instargram ↗</a>
-          <a href="#" target="_blank" rel="noopener">Facebook ↗</a>
-          <a href="#" target="_blank" rel="noopener">Youtube ↗</a>
-          <div class="footer_store">
-            <img src="assets/icon/offlinestore.svg" alt="" aria-hidden="true" />
-            <a href="#">Offline Store</a>
-          </div>
+          <a href="#" class="footer_sns_link" target="_blank" rel="noopener">
+            <span>Instargram</span>
+            <span class="footer_sns_arrow" aria-hidden="true">↗</span>
+          </a>
+          <a href="#" class="footer_sns_link" target="_blank" rel="noopener">
+            <span>Facebook</span>
+            <span class="footer_sns_arrow" aria-hidden="true">↗</span>
+          </a>
+          <a href="#" class="footer_sns_link" target="_blank" rel="noopener">
+            <span>Youtube</span>
+            <span class="footer_sns_arrow" aria-hidden="true">↗</span>
+          </a>
+          <a href="#" class="footer_sns_link">
+            <span>Offline Store</span>
+            <img src="assets/icon/offlinestore.svg" alt="" class="footer_sns_icon" aria-hidden="true" />
+          </a>
         </div>
       </div>
       <img src="assets/images/logo.svg" alt="CHAAKAN" class="footer_wordmark" />
