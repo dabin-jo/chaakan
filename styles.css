@@ -11,7 +11,7 @@
   --shadow_card: -1px 1px 2.3px 0px rgba(0, 0, 0, 0.25);
   --shadow_pop: 0px 0px 16px 0px rgba(0, 0, 0, 0.25);
   --shadow_btn: 0px 0px 8px rgba(0, 0, 0, 0.25);
-  --gutter: 16px;
+  --gutter: 12px;
   color-scheme: light;
 }
 
@@ -334,6 +334,10 @@ ul {
   display: inline-flex;
 }
 
+.header_user {
+  display: none;
+}
+
 /* ---------- 드로어 메뉴 ---------- */
 .nav_drawer {
   position: fixed;
@@ -548,6 +552,7 @@ ul {
   font-size: 1.05rem;
   line-height: 1.4;
   color: var(--color_black);
+  text-align: right;
   padding-bottom: 72px;
 }
 
@@ -583,7 +588,6 @@ ul {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 739px;
   background: var(--color_black);
   color: var(--color_white);
   border-radius: var(--radius_sm);
@@ -598,7 +602,7 @@ ul {
 .skill_card_bg {
   position: absolute;
   inset: 0;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.35s ease;
 }
 
@@ -705,6 +709,7 @@ ul {
 }
 
 .situation_bg {
+  display: none;
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
@@ -735,16 +740,26 @@ ul {
   color: var(--color_black);
 }
 
+.situation_media {
+  margin: 0 calc(var(--gutter) * -1);
+  padding: 24px 0;
+  background-size: cover;
+  background-position: center;
+}
+
 .situation_products {
   display: flex;
   gap: 16px;
   overflow-x: auto;
-  padding-bottom: 4px;
+  scroll-snap-type: x proximity;
+  padding: 0 var(--gutter) 4px;
 }
 
 .situation_product {
   flex: 0 0 auto;
-  width: 180px;
+  width: 60%;
+  max-width: 280px;
+  scroll-snap-align: start;
   border-radius: var(--radius_xs);
   overflow: hidden;
   background: var(--color_white);
@@ -800,6 +815,14 @@ ul {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
+}
+
+.best_title {
+  grid-column: 1 / -1;
+}
+
+.best_title .section_title_group {
+  margin-bottom: 0;
 }
 
 .best_card {
@@ -1162,6 +1185,10 @@ ul {
     display: none;
   }
 
+  .header_user {
+    display: inline-flex;
+  }
+
   .introduction_inner {
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -1174,10 +1201,19 @@ ul {
 
   .introduction_copy {
     font-size: 1.2rem;
+    text-align: left;
   }
 
   .skill_grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .skill_card {
+    min-height: 470px;
+  }
+
+  .skill_card_bg {
+    opacity: 0;
   }
 
   .situation_head {
@@ -1196,6 +1232,7 @@ ul {
   }
 
   .situation_bg {
+    display: block;
     position: absolute;
     inset: 0;
     width: 100%;
@@ -1243,6 +1280,11 @@ ul {
     row-gap: 20px;
   }
 
+  .best_title {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
   .best_card_info {
     padding: 12px;
     gap: 2px;
@@ -1257,42 +1299,42 @@ ul {
     font-size: 0.75rem;
   }
 
-  .best_card:nth-child(1) {
-    grid-column: 3;
-    grid-row: 1;
-  }
-
   .best_card:nth-child(2) {
-    grid-column: 4;
+    grid-column: 3;
     grid-row: 1;
   }
 
   .best_card:nth-child(3) {
+    grid-column: 4;
+    grid-row: 1;
+  }
+
+  .best_card:nth-child(4) {
     grid-column: 2;
     grid-row: 2;
   }
 
-  .best_card:nth-child(4) {
+  .best_card:nth-child(5) {
     grid-column: 1;
     grid-row: 3;
   }
 
-  .best_card:nth-child(5) {
+  .best_card:nth-child(6) {
     grid-column: 4;
     grid-row: 2;
   }
 
-  .best_card:nth-child(6) {
+  .best_card:nth-child(7) {
     grid-column: 3;
     grid-row: 2;
   }
 
-  .best_card:nth-child(7) {
+  .best_card:nth-child(8) {
     grid-column: 2;
     grid-row: 3;
   }
 
-  .best_card:nth-child(8) {
+  .best_card:nth-child(9) {
     grid-column: 4;
     grid-row: 3;
   }
@@ -1420,6 +1462,7 @@ ul {
   }
 
   .skill_card {
+    height: 739px;
     padding: 30px;
     min-height: 599px;
   }

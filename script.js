@@ -11,6 +11,8 @@ const situationDesc = document.getElementById('situation_panel_desc');
 const situationProductItems = document.querySelectorAll('#situation_products .situation_product');
 const navShoes = document.getElementById('nav_shoes');
 const navShoesTrigger = navShoes ? navShoes.querySelector('.nav_shoes_trigger') : null;
+const situationMediaEl = document.getElementById('situation_media');
+const isMobileViewport = window.matchMedia('(max-width: 767px)').matches;
 
 const situationData = {
   wedding: {
@@ -113,6 +115,14 @@ accordionTriggers.forEach((trigger) => {
   trigger.addEventListener('click', handleAccordionTriggerClick);
 });
 
+function updateSituationMedia(bg) {
+  if (situationMediaEl && isMobileViewport) {
+    situationMediaEl.style.backgroundImage = `url(${bg})`;
+  }
+}
+
+updateSituationMedia(situationData.wedding.bg);
+
 function handleSituationTagClick(event) {
   const selectedTag = event.currentTarget;
   const situationKey = selectedTag.dataset.situation;
@@ -129,6 +139,7 @@ function handleSituationTagClick(event) {
   });
 
   situationBg.src = data.bg;
+  updateSituationMedia(data.bg);
   situationTitle.textContent = data.title;
   situationDesc.textContent = data.desc;
 
