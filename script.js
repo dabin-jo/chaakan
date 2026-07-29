@@ -181,6 +181,59 @@ if (navShoes && navShoesTrigger) {
   });
 }
 
+let lookbookSwiper = null;
+const lookbookMobileQuery = window.matchMedia('(max-width: 767px)');
+
+function initLookbookSwiper() {
+  if (lookbookSwiper || typeof Swiper === 'undefined') {
+    return;
+  }
+  lookbookSwiper = new Swiper('.mySwiper', {
+    effect: 'creative',
+    watchSlidesProgress: true,
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    spaceBetween: 14,
+    speed: 650,
+    loop: true,
+    creativeEffect: {
+      limitProgress: 4,
+      perspective: true,
+      prev: {
+        translate: ['-4%', 0, -260],
+        scale: 0.85,
+        opacity: 0
+      },
+      next: {
+        translate: ['-12%', 0, -110],
+        rotate: [0, 0, 4],
+        scale: 0.94,
+        opacity: 0.85
+      }
+    }
+  });
+}
+
+function destroyLookbookSwiper() {
+  if (lookbookSwiper) {
+    lookbookSwiper.destroy(true, true);
+    lookbookSwiper = null;
+  }
+}
+
+function handleLookbookBreakpointChange(event) {
+  if (event.matches) {
+    initLookbookSwiper();
+  } else {
+    destroyLookbookSwiper();
+  }
+}
+
+if (document.querySelector('.mySwiper')) {
+  handleLookbookBreakpointChange(lookbookMobileQuery);
+  lookbookMobileQuery.addEventListener('change', handleLookbookBreakpointChange);
+}
+
 window.addEventListener('keydown', (event) => {
   if (event.key !== 'Escape') {
     return;
