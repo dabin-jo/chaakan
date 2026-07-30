@@ -229,7 +229,7 @@ ul {
 }
 
 .mega_menu_col_shoes {
-  gap: 24px;
+  gap: 32px;
 }
 
 .mega_menu_group {
@@ -323,6 +323,8 @@ ul {
   justify-content: center;
   width: 24px;
   height: 24px;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 .icon_btn img {
@@ -544,7 +546,8 @@ ul {
 }
 
 .introduction_media img {
-  width: 100%;
+  width: clamp(280px, 80vw, 420px);
+  max-width: 100%;
   border-radius: var(--radius_sm);
   object-fit: cover;
   aspect-ratio: 322 / 249;
@@ -555,7 +558,7 @@ ul {
   bottom: 0; right: 0;
   font-family: var(--font_kr);
   font-weight: 300;
-  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-size: clamp(0.9rem, 3vw, 1.4rem);
   line-height: 1.4;
   color: var(--color_black);
   text-align: right;
@@ -980,24 +983,20 @@ ul {
 .lookbook_swiper {
   display: block;
   width: 100%;
-  height: 440px;
-}
-
-.lookbook_swiper .swiper-wrapper {
-  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .lookbook_swiper .lookbook_card {
   width: 87%;
-  height: 100%;
 }
 
 .lookbook_swiper .lookbook_card img {
-  height: 100%;
+  width: 100%;
+  height: auto;
 }
 
 .lookbook_swiper .swiper-slide {
-  transition: filter 650ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-property: transform, filter, opacity;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   filter: brightness(78%);
 }
 
@@ -1164,7 +1163,7 @@ ul {
 }
 
 .footer_sns {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
@@ -1234,7 +1233,6 @@ ul {
     right: 0;
     background: var(--color_white);
     border-top: 1px solid rgba(16, 16, 16, 0.08);
-    box-shadow: var(--shadow_pop);
     padding: 24px var(--gutter);
     opacity: 0;
     visibility: hidden;
@@ -1293,11 +1291,13 @@ ul {
 
   .introduction_inner {
     grid-template-columns: 1fr 1fr;
-    align-items: center;
+    align-items: end;
     gap: 40px;
   }
 
   .introduction_media img {
+    width: 100%;
+    max-width: none;
     aspect-ratio: 460 / 485;
   }
 
@@ -1325,6 +1325,20 @@ ul {
 
   .skill_card_bg {
     opacity: 0;
+  }
+
+  .skill_card_txt {
+    flex: 1;
+    position: relative;
+    justify-content: center;
+  }
+
+  .skill_card_txt p {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
   }
 
   .situation_head {
@@ -1487,18 +1501,18 @@ ul {
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 24px;
+    gap: clamp(12px, 3vw, 24px);
   }
 
   .footer_left {
     display: flex;
     flex-wrap: wrap;
-    gap: clamp(24px, 5vw, 40px) clamp(24px, 8vw, 80px);
+    gap: clamp(16px, 3vw, 40px) clamp(16px, 3.5vw, 80px);
   }
 
   .footer_group {
     flex: 0 0 auto;
-    max-width: min(380px, 42vw);
+    max-width: clamp(160px, 30vw, 380px);
     border-bottom: none;
   }
 
@@ -1526,6 +1540,7 @@ ul {
   }
 
   .footer_sns {
+    display: flex;
     flex: 0 0 auto;
     align-items: flex-end;
     border-top: none;
@@ -1533,8 +1548,8 @@ ul {
   }
 
   .footer_sns_link {
-    font-size: clamp(0.75rem, 1.7vw, 0.9375rem);
-    padding: 6px clamp(6px, 1.5vw, 10px);
+    font-size: clamp(0.65rem, 1.5vw, 0.9375rem);
+    padding: 6px clamp(4px, 1vw, 10px);
   }
 
   .footer_wordmark {
@@ -1553,15 +1568,17 @@ ul {
   }
 
   .mega_menu {
-    padding: 20px 140px;
+    padding: 20px var(--gutter);
   }
 
   .mega_menu_inner {
     flex-wrap: nowrap;
+    justify-content: center;
     gap: 160px;
   }
 
   .mega_menu_left {
+    flex: 0 0 auto;
     flex-wrap: nowrap;
     gap: 0 120px;
   }
@@ -1601,9 +1618,9 @@ ul {
   }
 
   .skill_card {
-    height: 739px;
     padding: 30px;
-    min-height: 599px;
+    height: auto;
+    aspect-ratio: 438 / 599;
   }
 
   .skill_card_icon {
@@ -1612,7 +1629,17 @@ ul {
   }
 
   .skill_card_txt {
-    gap: 80px;
+    flex: 1;
+    position: relative;
+    justify-content: center;
+  }
+
+  .skill_card_txt p {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
   }
 
   .skill_card h3 {

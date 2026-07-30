@@ -179,10 +179,32 @@ if (navShoes && navShoesTrigger) {
       closeMegaMenu();
     }
   });
+  navShoesTrigger.addEventListener('click', (event) => {
+    event.preventDefault();
+  });
 }
 
 let lookbookSwiper = null;
+let lookbookAutoplayTimer = null;
 const lookbookMobileQuery = window.matchMedia('(max-width: 767px)');
+const LOOKBOOK_AUTOPLAY_DELAY = 1500;
+const LOOKBOOK_AUTOPLAY_SPEED = 1500;
+
+function startLookbookAutoplay() {
+  stopLookbookAutoplay();
+  lookbookAutoplayTimer = setInterval(() => {
+    if (lookbookSwiper && !lookbookSwiper.animating) {
+      lookbookSwiper.slideNext(LOOKBOOK_AUTOPLAY_SPEED);
+    }
+  }, LOOKBOOK_AUTOPLAY_DELAY);
+}
+
+function stopLookbookAutoplay() {
+  if (lookbookAutoplayTimer) {
+    clearInterval(lookbookAutoplayTimer);
+    lookbookAutoplayTimer = null;
+  }
+}
 
 function initLookbookSwiper() {
   if (lookbookSwiper || typeof Swiper === 'undefined') {
@@ -194,28 +216,31 @@ function initLookbookSwiper() {
     slidesPerView: 'auto',
     centeredSlides: true,
     spaceBetween: 14,
-    speed: 650,
+    speed: 750,
     loop: true,
+    autoHeight: true,
     creativeEffect: {
-      limitProgress: 4,
       perspective: true,
+      limitProgress: 2,
       prev: {
-        translate: ['-4%', 0, -260],
-        scale: 0.85,
-        opacity: 0
+        translate: ['-120%', 0, 0]
       },
       next: {
-        translate: ['-12%', 0, -110],
-        rotate: [0, 0, 4],
-        scale: 0.94,
-        opacity: 0.85
+        translate: ['10%', 0, -60],
+        rotate: [5, 5, 3],
+        scale: 0.94
       }
     }
   });
+
+  lookbookSwiper.on('touchStart', stopLookbookAutoplay);
+  lookbookSwiper.on('touchEnd', startLookbookAutoplay);
+  startLookbookAutoplay();
 }
 
 function destroyLookbookSwiper() {
   if (lookbookSwiper) {
+    stopLookbookAutoplay();
     lookbookSwiper.destroy(true, true);
     lookbookSwiper = null;
   }
